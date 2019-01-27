@@ -2976,6 +2976,7 @@ var TypesSondages = {
     }
 };
 
+// MAIN
 function ecouteur_generer(e) {
     var isLimited = el("checkLg").checked;
     var finsMessage = ["Sinon tout est foutu.", "Merci du fond du cœur pour votre infinie sollicitude.", "...ou bien réessayez pour voir si vous arrivez à vaincre le message d'erreur avec les mêmes règlages ! (Ne faîtes pas ça)", "Sinon un petit chaton sera défénestré. Mwahahahaha.", "Aucun animal n'a été maltraité durant la fabrication de ce message d'erreur.", "Ce message peut contenir des traces de fruits à coque.", ""];
@@ -3085,7 +3086,12 @@ function ecouteur_generer(e) {
         if (nombreEssais < 10000) {
             Generateur.Memoire.precedenteStructure = p.structureInitiale.cloner();
         }
+        //on commence a boucler
+        for(i=0;i<50;i++) {
+        p.corps += ' ' + new Phrase(opts).corps;
+        }
 
+        // fin des modifs
         Generateur.Memoire.lastPhrase = p;
         Generateur.Memoire.generations++;
 
@@ -3112,7 +3118,7 @@ function ecouteur_generer(e) {
         });
 
         var b_audio = document.createElement("IMG");
-        b_audio.src = "images/audio.png";
+        // b_audio.src = "images/audio.png";
         //b_audio.setAttribute("class", "b_audio");
         //b_audio.value = "wtf";
         b_audio.title= "prononcer !";
