@@ -3087,8 +3087,11 @@ function ecouteur_generer(e) {
             Generateur.Memoire.precedenteStructure = p.structureInitiale.cloner();
         }
         //on commence a boucler
-        for(i=0;i<50;i++) {
-        p.corps += ' ' + new Phrase(opts).corps;
+        stopLoop = Number(el("nbPhrase").value);
+        if (stopLoop == 'NaN')
+            stopLoop = 50;
+        for(i=0;i < stopLoop ;i++) {
+            p.corps += ' ' + new Phrase(opts).corps;
         }
 
         // fin des modifs
@@ -3118,7 +3121,7 @@ function ecouteur_generer(e) {
         });
 
         var b_audio = document.createElement("IMG");
-        // b_audio.src = "images/audio.png";
+        b_audio.src = "../images/audio.png";
         //b_audio.setAttribute("class", "b_audio");
         //b_audio.value = "wtf";
         b_audio.title= "prononcer !";
@@ -3133,7 +3136,7 @@ function ecouteur_generer(e) {
         b_audio.style.display = "none";
 
         var b_suppr = document.createElement("IMG");
-        b_suppr.src = "images/zap.png";
+        b_suppr.src = "../images/zap.png";
         //b_suppr.setAttribute("class", "b_suppr");
         //b_suppr.value = "ZAP";
         b_suppr.title= "supprimer ?";
