@@ -53,18 +53,20 @@
                     <label for="checkAllQuestions">Ne générer QUE des questions ?</label>
                     <br/>
                 </div>
-                <hr/>
-                <input type="checkbox" id="checkLg"/>
-                <label for="checkLg">Limiter la longueur</label>
-                <div id="choixLg">
-                    <br/>
-                    <label for="txtLgMin">&nbsp;Minimum :&nbsp;</label>
-                    <input type="text" id="txtLgMin" maxLength="3"/>
-                    <br/>
-                    <label for="txtLgMax">&nbsp;Maximum :&nbsp;</label>
-                    <input type="text" id="txtLgMax" maxLength="3"/>
+                <div style="visibility: hidden;">
+                    <hr/>
+                    <input type="checkbox" id="checkLg"/>
+                    <label for="checkLg">Limiter la longueur</label>
+                    <div id="choixLg">
+                        <br/>
+                        <label for="txtLgMin">&nbsp;Minimum :&nbsp;</label>
+                        <input type="text" id="txtLgMin" value="100"/>
+                        <br/>
+                        <label for="txtLgMax">&nbsp;Maximum :&nbsp;</label>
+                        <input type="text" id="txtLgMax" value="180"/>
+                    </div>
+                    <hr/>
                 </div>
-                <hr/>
                 <input type="checkbox" id="checkPronoms"/>
                 <label for="checkPronoms">Pas de pronoms personnels (je, tu, ...)</label>
                 <br/>

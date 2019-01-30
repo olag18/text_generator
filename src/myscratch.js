@@ -927,7 +927,7 @@ var Grimoire = {
         virgule: [","],
         deuxPoints: [":"],
         pointVirgule: [";"],
-        pointFinal: [".", " !", "...", " ?"]
+        pointFinal: [".", " !", ".", " ?"] // anciennement ".", " !", '..., " ?" ptet bug a voir
     },
     negations: ["pas", "plus", "pas encore", "presque plus", "point", "guère", "jamais", "presque jamais", "plus jamais", "pas du tout", "pas vraiment"],
     PROBA_NEGATIONS: [12,3,2,1,1,1,2,1,1,1,1],
@@ -2540,7 +2540,7 @@ function afficherStats() {
     var ordres = ["", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion", "décillion"];
     var plur = (memTotal >= 2) ? "s" : "";
     if ((echellesTotalLettres > 0) && (echellesTotalLettres < 11)) {
-        trans = memTotal.formater(null, null, " ") + " " + ordres[echellesTotalLettres] + plur + " et quelques...";
+        trans = memTotal.formater(null, null, " ") + " " + ordres[echellesTotalLettres] + plur + " et quelques";
     } else {
         trans = memTotal.formater(null, null, " ");
     }
@@ -3086,15 +3086,31 @@ function ecouteur_generer(e) {
         if (nombreEssais < 10000) {
             Generateur.Memoire.precedenteStructure = p.structureInitiale.cloner();
         }
+
         //on commence a boucler
+        
         stopLoop = Number(el("nbPhrase").value);
         if (stopLoop == 'NaN')
             stopLoop = 50;
-        for(i=0;i < stopLoop ;i++) {
-            p.corps += ' ' + new Phrase(opts).corps;
+        
+        function one_of_connection() {
+            list_of_connection = [ " car ", " et ", " quand ", " là où ", ", ou bien ", ", et donc ", ", or ", ", donc ", ", d'ailleurs ", ", en effet ", ", pourtant " ];
+            idx = de(11) - 1; 
+            return (list_of_connection[idx]);
         }
-
+            
+        put_connection = true;
+        for(i=0;i < stopLoop ;i++) {
+            if (put_connection) {
+                p.corps += ' ' + new Phrase(opts).corps;
+                put_connection = false;
+            } else {
+                p.corps = p.corps.slice(0, p.corps.length - 1) + one_of_connection() + new Phrase(opts).corps;
+                put_connection = true;
+            }
+        }
         // fin des modifs
+        
         Generateur.Memoire.lastPhrase = p;
         Generateur.Memoire.generations++;
 
