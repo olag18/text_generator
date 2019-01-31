@@ -910,8 +910,8 @@ var Grimoire = {
             lieu: PseudoBDD.Grimoire.verbes.avecPreposition.lieu
         }
     },
-    adjectifsInterrogatifs: ["pourquoi", "en quel honneur", "à quel titre", "à quelle fin", "en vertu de quel droit", "mais pourquoi"],
-    adjectifsInterrogatifsLieu: ["où", "à quel endroit", "en quel lieu", "où donc", "où diable", "putain mais où", "dans quel pays", "dans quelle ville"],
+    adjectifsInterrogatifs: ["pourquoi", "en quel honneur", "à quel titre", "à quelle fin", "mais pourquoi"],
+    adjectifsInterrogatifsLieu: ["où", "à quel endroit", "en quel lieu", "où donc"],
     adjectifsInterrogatifsTemps: ["quand", "à quel moment", "à quelle occasion"],
     adjectifsInterrogatifsManiere: ["comment", "de quelle manière", "dans quelle mesure"],
     complements: {
@@ -929,13 +929,13 @@ var Grimoire = {
         pointVirgule: [";"],
         pointFinal: [".", " !", ".", " ?"] // anciennement ".", " !", '..., " ?" ptet bug a voir
     },
-    negations: ["pas", "plus", "pas encore", "presque plus", "point", "guère", "jamais", "presque jamais", "plus jamais", "pas du tout", "pas vraiment"],
-    PROBA_NEGATIONS: [12,3,2,1,0,0,2,1,1,1,1],
-    PROBA_ADJECTIFS_INTERROGATIFS: [10, 1, 1, 1, 0, 1],
-    PROBA_ADJECTIFS_INTERROGATIFS_LIEU: [8, 2, 1, 2, 0, 0, 0, 0],
+    negations: ["pas", "plus", "pas encore", "presque plus", "jamais", "presque jamais", "plus jamais", "pas du tout", "pas vraiment"],
+    PROBA_NEGATIONS: [12,3,2,1,2,1,1,1,1],
+    PROBA_ADJECTIFS_INTERROGATIFS: [10, 1, 1, 1, 1],
+    PROBA_ADJECTIFS_INTERROGATIFS_LIEU: [8, 2, 1, 2],
     PROBA_ADJECTIFS_INTERROGATIFS_TEMPS: [10, 2, 1],
     PROBA_ADJECTIFS_INTERROGATIFS_MANIERE: [10, 2, 2],
-    pronomsReflexifs: ["me", "te", "se", "nous", "vous", "se"],
+    pronomsReflexifs: ["me","te","se", "nous", "vous", "se"],
 
     // --- METHODES "PUBLIQUES" ---
     recupererMot: function(code) {
