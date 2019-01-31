@@ -3101,7 +3101,7 @@ function ecouteur_generer(e) {
             
         put_connection = true;
         for(i=0;i < stopLoop ;i++) {
-            if (put_connection) {
+            if (p.corps[p.corps.length] == '?' || put_connection) {
                 p.corps += ' ' + new Phrase(opts).corps;
                 put_connection = false;
             } else {
