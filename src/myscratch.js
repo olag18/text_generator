@@ -3105,7 +3105,12 @@ function ecouteur_generer(e) {
                 p.corps += ' ' + new Phrase(opts).corps;
                 put_connection = false;
             } else {
-                p.corps = p.corps.slice(0, p.corps.length - 1) + one_of_connection() + new Phrase(opts).corps;
+                if (p.corps[p.corps.length-2] == ' ') {
+                    p.corps = p.corps.slice(0, p.corps.length - 2);
+                } else {
+                    p.corps = p.corps.slice(0, p.corps.length - 1);
+                }
+                p.corps += one_of_connection() + new Phrase(opts).corps
                 put_connection = true;
             }
         }
