@@ -930,9 +930,9 @@ var Grimoire = {
         pointFinal: [".", " !", ".", " ?"] // anciennement ".", " !", '..., " ?" ptet bug a voir
     },
     negations: ["pas", "plus", "pas encore", "presque plus", "point", "guère", "jamais", "presque jamais", "plus jamais", "pas du tout", "pas vraiment"],
-    PROBA_NEGATIONS: [12,3,2,1,1,1,2,1,1,1,1],
-    PROBA_ADJECTIFS_INTERROGATIFS: [10, 1, 1, 1, 1, 1],
-    PROBA_ADJECTIFS_INTERROGATIFS_LIEU: [8, 2, 1, 2, 2, 1, 1, 1],
+    PROBA_NEGATIONS: [12,3,2,1,0,0,2,1,1,1,1],
+    PROBA_ADJECTIFS_INTERROGATIFS: [10, 1, 1, 1, 0, 1],
+    PROBA_ADJECTIFS_INTERROGATIFS_LIEU: [8, 2, 1, 2, 0, 0, 0, 0],
     PROBA_ADJECTIFS_INTERROGATIFS_TEMPS: [10, 2, 1],
     PROBA_ADJECTIFS_INTERROGATIFS_MANIERE: [10, 2, 2],
     pronomsReflexifs: ["me", "te", "se", "nous", "vous", "se"],
@@ -1497,11 +1497,11 @@ var Generateur = {
         articlesPossS: ["mon_ma", "ton_ta", "son_sa", "notre", "votre", "leur"],
         articlesPossP: ["mes", "tes", "ses", "nos", "vos", "leurs"],
         quantifieurs: PseudoBDD.Generateur.Articles.quantifieurs,
-        PROBA_QUANTIFIEURS: [4,4,3,5,6,6,7,6,5,4,4,3,3,4,4,3,3,2,3,2,2,2,4,2,3,2,1,1,1,2,1,1,1]
+        PROBA_QUANTIFIEURS: [4,4,3,5,6,6,7,6,5,4,4,3,3,4,4,3,0,0,0,0,0,2,2,0,3,2,1,0,1,2,1,0,0]
     },
 
     GN: {
-        PROBA_PRONOMS_PERS: [2,2,1,2,2,1],
+        PROBA_PRONOMS_PERS: [0,0,5,1,0,5],
         nomsCommuns: PseudoBDD.Generateur.GN.nomsCommuns,
         complementNomPost: PseudoBDD.Generateur.GN.complementNomPost,
         pronomsPers: ["je@1", "tu@2", "il_elle@3", "nous@4", "vous@5", "ils_elles@6"],
