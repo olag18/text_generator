@@ -3110,7 +3110,9 @@ function ecouteur_generer(e) {
                 } else {
                     p.corps = p.corps.slice(0, p.corps.length - 1);
                 }
-                p.corps += one_of_connection() + new Phrase(opts).corps
+                without_maj = new Phrase(opts).corps;
+                without_maj = without_maj.slice(0, 5).toLowerCase() + without_maj.slice(5, without_maj.length)
+                p.corps += one_of_connection() + without_maj;
                 put_connection = true;
             }
         }
