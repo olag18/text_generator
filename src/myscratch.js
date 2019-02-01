@@ -935,6 +935,7 @@ var Grimoire = {
     PROBA_ADJECTIFS_INTERROGATIFS_LIEU: [8, 2, 1, 2, 2, 1, 1, 1],
     PROBA_ADJECTIFS_INTERROGATIFS_TEMPS: [10, 2, 1],
     PROBA_ADJECTIFS_INTERROGATIFS_MANIERE: [10, 2, 2],
+    PROBA_POINT_FINAL: [12,1,6,2],
     pronomsReflexifs: ["me", "te", "se", "nous", "vous", "se"],
 
     // --- METHODES "PUBLIQUES" ---
